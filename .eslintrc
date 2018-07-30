@@ -1,0 +1,150 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/flowtype",
+    "prettier/standard",
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype",
+    "react",
+    "prettier",
+    "import",
+    "jsdoc"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true,
+  },
+  "globals": {
+    "CustomEvent": true,
+    "document": true,
+    "Event": true,
+    "expect": true,
+    "fetch": true,
+    "gon": true,
+    "I18n": true,
+    "jest": true,
+    "Routes": true,
+    "window": true,
+  },
+  "rules": {
+    "lines-between-class-members": 0,
+    "class-methods-use-this": 0,
+    "import/extensions": [
+      2,
+      "never"
+    ],
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-named-as-default": 0,
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": [
+          "shuttlerock"
+        ]
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^__"
+      }
+    ],
+    "key-spacing": [
+      "error",
+      {
+        "multiLine": {
+          "beforeColon": false,
+          "afterColon": true
+        },
+        "align": {
+          "beforeColon": false,
+          "afterColon": true,
+          "on": "value"
+        }
+      }
+    ],
+    "jsdoc/check-param-names": 1,
+    "jsdoc/check-tag-names": 1,
+    "jsdoc/check-types": 1,
+    "jsdoc/newline-after-description": 1,
+    "jsdoc/require-description-complete-sentence": 1,
+    "jsdoc/require-hyphen-before-param-description": 1,
+    "jsdoc/require-param": 1,
+    "jsdoc/require-param-description": 1,
+    "jsdoc/require-param-type": 1,
+    "jsdoc/require-returns-description": 1,
+    "jsdoc/require-returns-type": 1,
+    //  See https://github.com/ReactTraining/react-router/issues/5598
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "components": [
+          "Label"
+        ],
+        "required": {
+          "some": [
+            "nesting",
+            "id"
+          ]
+        },
+        "allowChildren": false
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/no-autofocus": 0,
+    // TODO: remove this rule after we have gotten rid of all alert()s.
+    "no-alert": 0,
+    // React rules
+    "react/prefer-es6-class": [
+      1,
+      "always"
+    ], // Enforce ES6 class for React Components
+    "react/destructuring-assignment": 0, // Rule enforces consistent usage of destructuring assignment in component
+    "react/no-danger": 0,
+    "react/no-array-index-key": 0,
+    "react/prefer-stateless-function": 0,
+    "react/default-props-match-prop-types": 1, // Prevent extraneous defaultProps on components
+    "react/no-typos": 1, // Prevents common typos
+    "react/no-did-mount-set-state": 1, // Prevent usage of setState in componentDidMount
+    "react/no-direct-mutation-state": 1, // Prevent direct mutation of this.state
+    "react/jsx-one-expression-per-line": 1, // Limit to one expression per line in JSX
+    "react/jsx-pascal-case": 1, // Enforce PascalCase for user-defined JSX components
+    "react/jsx-props-no-multi-spaces": 1, // Disallow multiple spaces between inline JSX props (fixable)
+    "react/jsx-sort-default-props": 1, // Enforce default props alphabetical sorting
+    // Enforce component methods order
+    "react/sort-comp": [
+      2,
+      {
+        "order": [
+          "static-methods",
+          "constructor",
+          "lifecycle",
+          "render",
+          "/^render.+$/",
+          "/^handle.+$/",
+          "everything-else"
+        ]
+      }
+    ],
+    // # function-paren-newline: ["error", "multiline"]
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ]
+  }
+}

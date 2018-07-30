@@ -1,0 +1,19 @@
+[ignore]
+.*/.bundle
+.*/vendor
+.*/node_modules/react-select/.*
+
+[include]
+./app/javascript/packs/
+
+[libs]
+./app/javascript/flow-typed/
+
+[lints]
+
+[options]
+include_warnings=true
+module.name_mapper='.*\(.scss\)' -> 'empty/object'
+module.name_mapper='.*\(.sass\)' -> 'empty/object'
+
+[strict]
