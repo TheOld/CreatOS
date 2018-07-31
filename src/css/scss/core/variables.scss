@@ -1,0 +1,28 @@
+// Elements that begin and end at rest use standard easing
+$standard-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+// Incoming elements are animated using deceleration easing, which starts a transition at peak velocity (the fastest point of an element’s movement) and ends at rest.
+$decelerating-easing: cubic-bezier(0, 0, 0.2, 1);
+
+// Elements exiting a screen use acceleration easing, where they start at rest and end at peak velocity.
+$accelerating-easing: cubic-bezier(0.4, 0, 1, 1);
+
+// Animated elements that traverse a large portion of the screen have the longest durations.
+$large-expand: 300ms;
+$large-collapse: 250ms;
+$medium-expand: 250ms;
+$medium-collapse: 200ms;
+
+
+// Breakpoints
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;

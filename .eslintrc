@@ -1,16 +1,13 @@
 {
   "extends": [
     "airbnb",
-    "plugin:flowtype/recommended",
     "plugin:react/recommended",
     "prettier",
     "prettier/react",
-    "prettier/flowtype",
     "prettier/standard",
   ],
   "parser": "babel-eslint",
   "plugins": [
-    "flowtype",
     "react",
     "prettier",
     "import",
@@ -35,6 +32,7 @@
     "window": true,
   },
   "rules": {
+    "global-require": 0,
     "lines-between-class-members": 0,
     "class-methods-use-this": 0,
     "import/extensions": [
@@ -111,6 +109,7 @@
     ], // Enforce ES6 class for React Components
     "react/destructuring-assignment": 0, // Rule enforces consistent usage of destructuring assignment in component
     "react/no-danger": 0,
+    "react/forbid-prop-types": 0,
     "react/no-array-index-key": 0,
     "react/prefer-stateless-function": 0,
     "react/default-props-match-prop-types": 1, // Prevent extraneous defaultProps on components
@@ -121,6 +120,15 @@
     "react/jsx-pascal-case": 1, // Enforce PascalCase for user-defined JSX components
     "react/jsx-props-no-multi-spaces": 1, // Disallow multiple spaces between inline JSX props (fixable)
     "react/jsx-sort-default-props": 1, // Enforce default props alphabetical sorting
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
     // Enforce component methods order
     "react/sort-comp": [
       2,

@@ -1,0 +1,13 @@
+@import '../../../css/scss/core/colors';
+
+.root {
+  z-index: 5;
+  display: flex;
+  width: 100%;
+  padding-top: 32px;
+  border-right: 1px solid $catskill;
+  border-left: 1px solid $catskill;
+  grid-row: 1;
+  grid-column: 2 / 20;
+  justify-content: space-between;
+}

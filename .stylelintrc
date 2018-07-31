@@ -7,12 +7,11 @@
   ],
   "plugins": [
     "stylelint-number-z-index-constraint",
-    "stylelint-declaration-block-no-ignored-properties",
     "stylelint-declaration-use-variable",
     "stylelint-high-performance-animation",
     "stylelint-images"
   ],
-  "syntax": "sass",
+  "syntax": "scss",
   "rules": {
     "block-no-empty": true,
     "block-closing-brace-newline-before": null,
@@ -22,12 +21,11 @@
     "at-rule-name-case": "lower",
     "color-no-invalid-hex": true,
     "declaration-block-no-duplicate-properties": true,
-    "declaration-block-trailing-semicolon": null,
-    "declaration-no-important": null,
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-no-important": true,
     "indentation": 2,
     "max-nesting-depth": 3,
     "comment-empty-line-before": null,
-    "plugin/declaration-block-no-ignored-properties": true,
     "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
     "selector-descendant-combinator-no-non-space": true,
     "selector-max-id": 0,

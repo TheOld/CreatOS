@@ -1,4 +1,5 @@
 const path = require('path');
+
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -10,6 +11,7 @@ const FlowBabelWebpackPlugin = require('flow-babel-webpack-plugin');
 const PATH = str => path.resolve(__dirname, str);
 
 module.exports = {
+  mode:  'development',
   entry: {
     app: [
       PATH('src/js/index.js'),
@@ -17,27 +19,67 @@ module.exports = {
     ],
   },
   output: {
-    filename: '[name].[hash].js',
-    path:     PATH('dist'),
+    filename:   '[name].[hash].js',
+    path:       PATH('dist'),
+    publicPath: '/',
+
   },
   devtool:   'inline-source-map',
-  resolve:   { extensions: ['.js', '.jsx'] },
+  resolve:   { extensions: ['.js', '.jsx', '.scss'] },
   devServer: {
-    contentBase: PATH('dist'),
-    hot:         false,
+    contentBase:        PATH('dist'),
+    historyApiFallback: true,
+    hot:                false,
     // display errors in a webpage overlay
-    overlay:     true,
-    compress:    true,
-    port:        9000,
+    overlay:            true,
+    compress:           true,
+    port:               9000,
     // serve over https
-    https:       true,
+    https:              false,
+    open:               false,
     // allow Cross Origin Request
-    headers:     {
+    headers:            {
       'Access-Control-Allow-Origin': '*',
     },
   },
   module: {
     rules: [
+      {
+        test: /\.(png|jpg|gif)$/,
+        use:  [
+          'file-loader',
+        ],
+      },
+      {
+        test: /\.(jpg|png|woff|woff2|eot|ttf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use:  'url-loader',
+      },
+      {
+        test:   /\.svg$/,
+        loader: 'babel-loader!svg-react-loader',
+      },
+      {
+        test: /\.css$/,
+        use:  [
+          'style-loader',
+          'css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+        ],
+      },
+      {
+        test: /\.s[c|a]ss$/,
+        use:  [
+          'style-loader',
+          'css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+          'postcss-loader',
+          'sass-loader'
+        ],
+      },
+      {
+        test:    /\.js|.jsx$/,
+        use:     'babel-loader',
+        include: PATH('src/js'),
+        exclude: /node_modules/,
+      },
       {
         enforce: 'pre',
         test:    /\.js|.jsx$/,
@@ -47,36 +89,6 @@ module.exports = {
           fix: true,
         },
       },
-      {
-        test:    /\.js|.jsx$/,
-        use:     'babel-loader',
-        include: PATH('src/js'),
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use:  'url-loader',
-      },
-      {
-        test:   /\.svg$/,
-        loader: 'babel-loader!svg-react-loader',
-      },
-      {
-        test: /\.s[c|a]ss$/,
-        use:  ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use:  [
-          'file-loader',
-        ],
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use:  [
-          'file-loader',
-        ],
-      },
     ],
   },
   plugins: [
@@ -84,7 +96,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css',
     }),
-    new StyleLintPlugin({ syntax: 'scss', context: PATH('src/css') }),
+    new StyleLintPlugin(
+      {
+        syntax:  'scss',
+        context: PATH('src/css/**/*.scss')
+      }
+    ),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       inject:   true,
@@ -93,6 +110,5 @@ module.exports = {
       filename: 'index.html',
     }),
     new WebpackMd5Hash(),
-    new FlowBabelWebpackPlugin(),
   ],
 };

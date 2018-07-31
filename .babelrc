@@ -14,14 +14,11 @@
       }
     ],
     "stage-0",
-    "flow",
     "react"
   ],
   "comments": true,
   "plugins": [
-    "react-loadable/babel",
     "react-css-modules",
-    "transform-flow-comments",
     "syntax-dynamic-import",
     "transform-inline-environment-variables",
     "dynamic-import-node",
@@ -29,10 +26,10 @@
     [
       "react-css-modules",
       {
-        "generateScopedName": "[name]__[local]___[hash:base64:5]",
+        "generateScopedName": "[path]___[name]__[local]___[hash:base64:5]",
         "filetypes": {
           ".scss": {
-            "syntax": "postcss-syntax"
+            "syntax": "postcss-scss"
           }
         }
       }

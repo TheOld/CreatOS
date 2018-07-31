@@ -1,0 +1,49 @@
+@import '../../../css/scss/core/colors';
+
+@import '../../../css/scss/core/variables';
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+  color: $cello;
+  font-weight: 300;
+  font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
+  transition: color 180ms $standard-easing;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: $spray;
+    transition: transform 180ms $accelerating-easing, opacity 180ms $accelerating-easing;
+    transform: translate3d(-2px, -8px, 0) scale3d(0.3, 0.3, 0.3);
+    content: '';
+  }
+
+  &:not(:first-child) {
+    margin-left: 24px;
+  }
+
+  &:hover,
+  &.active {
+    color: $spray;
+
+    &::before {
+      opacity: 1;
+      transform: translate3d(-2px, -8px, 0) scale3d(1, 1, 1);
+    }
+  }
+
+  b {
+    font-weight: 400;
+  }
+}

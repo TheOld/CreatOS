@@ -1,19 +1,30 @@
 
+/* ----------  External Libraries  ---------- */
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import store, { history } from './store/store';
 
-import Logo from './components/Logo/Logo';
 
-document.addEventListener('DOMContentLoaded', () => {
-  /* eslint-disable */
-  console.log('DOMContentLoaded');
-  /* eslint-disable */
+/* ----------  Polyfill  ---------- */
+import 'babel-polyfill';
+import 'nodelist-foreach-polyfill';
 
-  const logoEl = document.querySelector('.js--logo');
-  if(logoEl) {
-    ReactDOM.render(
-      <Logo />,
-      logoEl
-    );
-  }
-});
+/* ----------  Components  ---------- */
+import App from './components/Container/App';
+
+import 'normalize.css';
+
+require('es6-promise/auto');
+
+const root = document.querySelector('#app');
+
+render(
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
+  </Provider>,
+  root
+)

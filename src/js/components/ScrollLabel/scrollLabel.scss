@@ -1,0 +1,15 @@
+@import '../../../css/scss/core/colors';
+
+@import '../../../css/scss/core/typography';
+
+.label {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: $dodger;
+  font-weight: 400;
+  line-height: $line-height;
+  font-family: $teko;
+  text-align: center;
+}
