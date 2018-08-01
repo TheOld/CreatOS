@@ -76,7 +76,7 @@ class Home extends Component {
 
   render() {
     return (
-      <section styleName="root" className="col-start-3 col-end-19 view">
+      <section styleName="root" className="col-start-2 col-end-20 view">
         {this.renderContent()}
       </section>
     );
