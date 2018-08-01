@@ -6,7 +6,11 @@ import './content.scss';
 class Communities extends Component {
   render() {
     return (
-      <div styleName="root" />
+      <article styleName="root root-inner" >
+        <h2 className="col-start-4 col-end-15 row-3">
+          Aligning into Efficient Communities
+        </h2>
+      </article>
     );
   }
 }

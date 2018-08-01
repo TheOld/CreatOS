@@ -5,7 +5,11 @@ import './content.scss';
 class ProductFocus extends Component {
   render() {
     return (
-      <div styleName="root" />
+      <article styleName="root root-inner" >
+        <p styleName="section-label" className="col-start-3 col-end-3 row-2">
+          product focus
+        </p>
+      </article>
     );
   }
 }

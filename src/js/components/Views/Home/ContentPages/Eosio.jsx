@@ -5,7 +5,7 @@ import './content.scss';
 class Eosio extends Component {
   render() {
     return (
-      <div styleName="root" />
+      <article styleName="root root-inner" />
     );
   }
 }

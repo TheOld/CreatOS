@@ -6,7 +6,7 @@
   body {
     height: 100%;
     margin: 0;
-    background: repeating-linear-gradient(to right, $catskill, transparent 1px, transparent 1px, transparent 270px);
+    background: repeating-linear-gradient(to right, $catskill, transparent 1px, transparent 1px, transparent 292px);
   }
 
   .container {
@@ -26,11 +26,8 @@
   .view {
     position: relative;
     z-index: 0;
-    height: calc(100vh - 80px);
-    padding-top: 80px;
     border-right: 1px solid $catskill;
     border-left: 1px solid $catskill;
-    margin-top: -80px;
     grid-row: 2;
     transform-style: preserve-3d;
     perspective: 500px;

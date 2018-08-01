@@ -6,11 +6,11 @@ class Context extends Component {
   render() {
     return (
       <article styleName="root root-inner">
-        <p styleName="section-label" className="col-start-2 col-end-3 row-2">
+        <p styleName="section-label" className="col-start-3 col-end-3 row-2">
           Context
         </p>
 
-        <section styleName="content-wrapper" className="col-start-3 col-end-14 row-3">
+        <section styleName="content-wrapper" className="col-start-4 col-end-15 row-3">
           <h2 styleName="title">
             The advertising and marketing industry
             {' '}
