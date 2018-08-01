@@ -27,9 +27,7 @@ class Main extends Component {
     const { playing } = this.props;
     return (
       <article
-        styleName="root"
-        className="grid-inner"
-        {...this.props} >
+        styleName="root root-video">
         <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' styleName="video-player" width="100%" height="100%" playing={playing} />
         <Anime opacity={[0, 1]} translateY="1em" delay={220}>
           <Tappable onTap={this.handlePlay} styleName="btn-play">

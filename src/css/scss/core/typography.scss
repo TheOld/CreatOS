@@ -1,5 +1,7 @@
 @import 'mixins';
 
+@import 'colors';
+
 ////  Modular scale ratios
 $minor-second: 1.067;
 $major-second: 1.125;
@@ -21,7 +23,7 @@ $pi: 3.1416;
 // body font-size in pixels for Desktops
 $body: 16px;
 $ratio: $perfect-fourth;
-$line-height: $major-third;
+$line-height: $augmented-fourth;
 
 // body font-size in pixels for Mobiles
 $mbody: 12px;
@@ -36,7 +38,7 @@ $break-desktop: 376px;
 //    Calculation
 $p: round($body);
 $h6: round($body);
-$h5: round($h6 * $ratio);
+$h5: round(($h6 * $ratio) + 1);
 $h4: round($h5 * $ratio);
 $h3: round($h4 * $ratio);
 $h2: round($h3 * $ratio);
@@ -75,6 +77,7 @@ $teko: 'Teko', sans-serif;
 //    Calculation
 
 body {
+  color: $cello;
   font-size: $body;
   line-height: $line-height;
   font-family: $montserrat;

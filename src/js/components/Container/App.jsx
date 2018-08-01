@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
-        <TransitionGroup component="section" className="content-wrapper">
+        <TransitionGroup component="section" className="container">
           <CSSTransition key={currentKey} timeout={timeout} classNames="render" appear>
             <Switch >
               <Route exact path="/" component={Home} />

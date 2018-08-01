@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
-import Fader from '../../../interactions/Fader';
+// import Fader from '../../../interactions/Fader';
 
 /* ----------  Actions  ---------- */
 import {
@@ -59,7 +59,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
 
-    this.fader = new Fader();
+    // this.fader = new Fader();
   }
 
   static propTypes = {
@@ -76,7 +76,7 @@ class Home extends Component {
 
   render() {
     return (
-      <section styleName="root" className="view">
+      <section styleName="root" className="col-start-3 col-end-19 view">
         {this.renderContent()}
       </section>
     );

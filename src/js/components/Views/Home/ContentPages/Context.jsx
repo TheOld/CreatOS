@@ -5,23 +5,33 @@ import './content.scss';
 class Context extends Component {
   render() {
     return (
-      <article styleName="root">
-        <p styleName="section-label">
+      <article styleName="root root-inner">
+        <p styleName="section-label" className="col-start-2 col-end-3 row-2">
           Context
         </p>
-        <div styleName="col-offset-4-13">
+
+        <section styleName="content-wrapper" className="col-start-3 col-end-14 row-3">
           <h2 styleName="title">
-            The advertising and
-            marketing industry
-          </h2>
-          <h5 styleName="subtitle">
-            Like many other industries, advertising and marketing has gone through change and evolution.
+            The advertising and marketing industry
             {' '}
             <em>
-              Nothing as impactful as the eras of new media and digital.
+              new era
             </em>
-          </h5>
-        </div>
+          </h2>
+
+          <h5 styleName="subtitle">
+            <span styleName="highlight">
+              This is a new era of fast-paced creative collaboration.
+            </span>
+            <br />
+            creat
+            <b>
+              os
+            </b>
+            {' '}
+            brings a decentralised platform to connect buyers and sellers across the complete advertising and marketing spectrum.
+        </h5>
+        </section>
       </article>
     );
   }
